@@ -1,0 +1,84 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30723.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreenField.API", "..\..\GreenField\src\GreenField.API\GreenField.API.csproj", "{6EA3FFB6-9FF7-404A-A291-652B22ECBDA3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{6866C14A-CE0B-4A32-8ED8-52D7D379C6C1}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{C1F1BAAD-147D-424E-8A65-F55FE85CD089}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreenField.Users", "..\..\GreenField\src\GreenField.API\Modules\GreenField.Users\GreenField.Users.csproj", "{31808348-D9F2-400E-8AEA-DF2E38D70DCD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreenField.Framework", "..\..\GreenField\src\GreenField\GreenField.Framework.csproj", "{B832A512-BF4C-4CB5-839D-6BEA05EBE0A9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreenField.Books", "..\..\GreenField\src\GreenField.API\Modules\GreenField.Books\GreenField.Books.csproj", "{BA7C1EFA-0B22-48FB-87C8-5A9DBBA6C7B9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreenField.Stories", "GreenField.API\Modules\GreenField.Stories\GreenField.Stories.csproj", "{7C779D1E-A94E-49AD-8921-2A33CBA33C39}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "GreenField.Web", "http://localhost:55854", "{A7F5ACC3-2EA5-41D2-AC34-A358CDFF20F1}"
+	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "true"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_55854"
+		Debug.AspNetCompiler.PhysicalPath = "..\..\GreenField\src\GreenField.Web\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_55854\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_55854"
+		Release.AspNetCompiler.PhysicalPath = "..\..\GreenField\src\GreenField.Web\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_55854\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "..\..\GreenField\src\GreenField.Web\"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6EA3FFB6-9FF7-404A-A291-652B22ECBDA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6EA3FFB6-9FF7-404A-A291-652B22ECBDA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6EA3FFB6-9FF7-404A-A291-652B22ECBDA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6EA3FFB6-9FF7-404A-A291-652B22ECBDA3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31808348-D9F2-400E-8AEA-DF2E38D70DCD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31808348-D9F2-400E-8AEA-DF2E38D70DCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31808348-D9F2-400E-8AEA-DF2E38D70DCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31808348-D9F2-400E-8AEA-DF2E38D70DCD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B832A512-BF4C-4CB5-839D-6BEA05EBE0A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B832A512-BF4C-4CB5-839D-6BEA05EBE0A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B832A512-BF4C-4CB5-839D-6BEA05EBE0A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B832A512-BF4C-4CB5-839D-6BEA05EBE0A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA7C1EFA-0B22-48FB-87C8-5A9DBBA6C7B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA7C1EFA-0B22-48FB-87C8-5A9DBBA6C7B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA7C1EFA-0B22-48FB-87C8-5A9DBBA6C7B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA7C1EFA-0B22-48FB-87C8-5A9DBBA6C7B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C779D1E-A94E-49AD-8921-2A33CBA33C39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C779D1E-A94E-49AD-8921-2A33CBA33C39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C779D1E-A94E-49AD-8921-2A33CBA33C39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C779D1E-A94E-49AD-8921-2A33CBA33C39}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7F5ACC3-2EA5-41D2-AC34-A358CDFF20F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7F5ACC3-2EA5-41D2-AC34-A358CDFF20F1}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7F5ACC3-2EA5-41D2-AC34-A358CDFF20F1}.Release|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{31808348-D9F2-400E-8AEA-DF2E38D70DCD} = {C1F1BAAD-147D-424E-8A65-F55FE85CD089}
+		{BA7C1EFA-0B22-48FB-87C8-5A9DBBA6C7B9} = {C1F1BAAD-147D-424E-8A65-F55FE85CD089}
+		{7C779D1E-A94E-49AD-8921-2A33CBA33C39} = {C1F1BAAD-147D-424E-8A65-F55FE85CD089}
+	EndGlobalSection
+EndGlobal
