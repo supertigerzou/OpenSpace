@@ -6,23 +6,23 @@ using System.Linq;
 
 namespace GreenField.Books.Services
 {
-    public interface IBookService
+    public interface IStoryService
     {
-        List<Book> GetAll();
+        List<Story> GetAll();
     }
 
-    public class BookService : IBookService
+    public class StoryService : IStoryService
     {
-        private readonly IRepository<Book> _bookRepository;
+        private readonly IRepository<Story> _storyRepository;
 
-        public BookService()
+        public StoryService()
         {
-            _bookRepository = new EfRepository<Book>(new BookContext());
+            _storyRepository = new EfRepository<Story>(new StoryContext());
         }
 
-        public List<Book> GetAll()
+        public List<Story> GetAll()
         {
-            return _bookRepository.Table.ToList();
+            return _storyRepository.Table.ToList();
         }
     }
 }

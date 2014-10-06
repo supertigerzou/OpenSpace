@@ -1,9 +1,9 @@
 ﻿
 namespace GreenField.Books.ViewModels
 {
-    public class BookViewModel
+    public class StoryViewModel
     {
         public string Name { get; set; }
-        public string Auther { get; set; }
+        public string Teller { get; set; }
     }
 }

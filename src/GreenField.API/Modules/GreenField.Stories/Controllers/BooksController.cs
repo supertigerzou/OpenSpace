@@ -1,28 +1,27 @@
-﻿using GreenField.Books.Data.DomainModels;
+﻿using GreenField.Books.Services;
+using GreenField.Books.ViewModels;
 using System.Linq;
 using System.Web.Http;
-using GreenField.Books.Services;
-using GreenField.Books.ViewModels;
 
 namespace GreenField.Books.Controllers
 {
-    [RoutePrefix("api/Books")]
-    public class BooksController : ApiController
+    [RoutePrefix("api/Stories")]
+    public class StoriesController : ApiController
     {
-        private readonly IBookService _bookService;
+        private readonly IStoryService _storyService;
 
-        public BooksController(IBookService bookService)
+        public StoriesController(IStoryService storyService)
         {
-            _bookService = bookService;
+            _storyService = storyService;
         }
 
         [Route("")]
         public IHttpActionResult Get()
         {
-            return Ok(_bookService.GetAll().Select(book => new BookViewModel
+            return Ok(_storyService.GetAll().Select(story => new StoryViewModel
                 {
-                    Name = book.Name,
-                    Auther = book.Author.FirstName + " " + book.Author.LastName
+                    Name = story.Name,
+                    Teller = story.Teller.FirstName + " " + story.Teller.LastName
                 }));
         }
     }

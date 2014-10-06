@@ -1,31 +1,31 @@
 ﻿using GreenField.Books.Data.DomainModels;
 using GreenField.Framework.Data;
+using GreenField.Framework.Data.DomainModels;
 using System;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration;
 using System.Linq;
 using System.Reflection;
-using GreenField.Framework.Data.DomainModels;
 
 namespace GreenField.Books.Data
 {
-    public class BookContext : GFDbContext
+    public class StoryContext : GFDbContext
     {
-        public BookContext()
+        public StoryContext()
             : base("GFContext")
         {
             
         }
 
-        public virtual IDbSet<Book> Books { get; set; }
+        public virtual IDbSet<Story> Stories { get; set; }
 
-        public virtual IDbSet<Author> Authors { get; set; }
+        public virtual IDbSet<Teller> Tellers { get; set; }
 
         public virtual IDbSet<EntityPicture> EntityPictures { get; set; }
         
-        public virtual IDbSet<BookEntityPicture> BookEntityPictures { get; set; }
+        public virtual IDbSet<StoryEntityPicture> StoryEntityPictures { get; set; }
 
-        public virtual IDbSet<AuthorEntityPicture> AuthorEntityPictures { get; set; }
+        public virtual IDbSet<TellerEntityPicture> TellerEntityPictures { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
