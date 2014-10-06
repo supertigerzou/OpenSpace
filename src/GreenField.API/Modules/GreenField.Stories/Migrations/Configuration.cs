@@ -1,11 +1,12 @@
 using GreenField.Books.Data;
 using GreenField.Books.Data.DomainModels;
+using GreenField.Books.Migrations;
 using GreenField.Framework.Data.DomainModels;
 using GreenField.Framework.Helpers;
 using System.Data.Entity.Migrations;
 using System.IO;
 
-namespace GreenField.Books.Migrations
+namespace GreenField.Stories.Migrations
 {
     public sealed class Configuration : DbMigrationsConfiguration<StoryContext>
     {
@@ -16,19 +17,22 @@ namespace GreenField.Books.Migrations
 
         protected override void Seed(StoryContext context)
         {
+            InitializeBooksData.Init(context);
+            context.SaveChanges();
+
             //  This method will be called after migrating to the latest version.
 
             //  Use the DbSet<T>.AddOrUpdate() helper extension method to avoid creating duplicate seed data.
             var loginUserSummer = new ApplicationUser
-                {
-                    UserName = "summer.xia",
-                    PasswordHash = "ADWj64qPNVxOr988AtL7WKaHKkOYSP9LFWUQniZIRxnXFaNJHELTF4kp+FtTnrYe6Q=="
-                };
+            {
+                UserName = "summer.xia",
+                PasswordHash = "ADWj64qPNVxOr988AtL7WKaHKkOYSP9LFWUQniZIRxnXFaNJHELTF4kp+FtTnrYe6Q=="
+            };
             var loginUserElsa = new ApplicationUser
-                {
-                    UserName = "elsa.xia",
-                    PasswordHash = "ADWj64qPNVxOr988AtL7WKaHKkOYSP9LFWUQniZIRxnXFaNJHELTF4kp+FtTnrYe6Q=="
-                };
+            {
+                UserName = "elsa.xia",
+                PasswordHash = "ADWj64qPNVxOr988AtL7WKaHKkOYSP9LFWUQniZIRxnXFaNJHELTF4kp+FtTnrYe6Q=="
+            };
 
             context.Users.AddOrUpdate(
                 p => p.UserName,
@@ -44,11 +48,11 @@ namespace GreenField.Books.Migrations
                 LoginUser = loginUserSummer
             };
             var tellerElsa = new Teller
-                {
-                    FirstName = "Elsa",
-                    LastName = "Xia",
-                    LoginUser = loginUserElsa
-                };
+            {
+                FirstName = "Elsa",
+                LastName = "Xia",
+                LoginUser = loginUserElsa
+            };
 
             context.Tellers.AddOrUpdate(
                 p => p.Id,
@@ -81,7 +85,25 @@ namespace GreenField.Books.Migrations
                 pictureSummer1,
                 pictureSummer2
                 );
-            
+            context.SaveChanges();
+
+            var tellerPictureMapping1 = new TellerEntityPicture
+            {
+                Entity = tellerSummer,
+                EntityPicture = pictureSummer1,
+                Primary = true
+            };
+            var tellerPictureMapping2 = new TellerEntityPicture
+            {
+                Entity = tellerSummer,
+                EntityPicture = pictureSummer2,
+                Primary = false
+            };
+
+            context.TellerEntityPictures.AddOrUpdate(
+                bbp => new { bbp.EntityId, bbp.EntityPictureId },
+                tellerPictureMapping1, tellerPictureMapping2
+                );
         }
     }
 }

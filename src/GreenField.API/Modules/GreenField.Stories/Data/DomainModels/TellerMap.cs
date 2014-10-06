@@ -6,7 +6,7 @@ namespace GreenField.Books.Data.DomainModels
     {
         public TellerMap()
         {
-            ToTable("Author");
+            ToTable("Teller");
             HasKey(b => b.Id);
 
             HasOptional(a => a.LoginUser);

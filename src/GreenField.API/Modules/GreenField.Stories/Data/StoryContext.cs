@@ -9,7 +9,7 @@ using System.Reflection;
 
 namespace GreenField.Books.Data
 {
-    public class StoryContext : GFDbContext
+    public class StoryContext : BookContext
     {
         public StoryContext()
             : base("GFContext")
@@ -21,8 +21,6 @@ namespace GreenField.Books.Data
 
         public virtual IDbSet<Teller> Tellers { get; set; }
 
-        public virtual IDbSet<EntityPicture> EntityPictures { get; set; }
-        
         public virtual IDbSet<StoryEntityPicture> StoryEntityPictures { get; set; }
 
         public virtual IDbSet<TellerEntityPicture> TellerEntityPictures { get; set; }
